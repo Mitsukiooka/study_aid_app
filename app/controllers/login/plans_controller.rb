@@ -23,6 +23,7 @@ class Login::PlansController < Login::ApplicationController
   end
 
   def edit
+    render "edit_#{@plan.plan_status}"
   end
 
   def update
