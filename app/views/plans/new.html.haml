@@ -1,0 +1,8 @@
+=bootstrap_form_with model: @plan, local: true do |f|
+  =f.text_field :title
+  =f.text_field :study_aid
+  =f.text_area :plan_detail
+  =f.text_area :plan_goal
+  =f.date_select :start_at
+  =f.date_select :end_at
+  =f.submit
