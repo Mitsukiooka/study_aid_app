@@ -1,4 +1,4 @@
 =bootstrap_form_with model: @plan, local: true do |f|
-  =f.text_field :status
+  =f.select :status, Plan.status.options
   =f.text_area :feedback_comment
   =f.submit
