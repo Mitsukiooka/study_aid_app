@@ -1,0 +1,5 @@
+=@student.name
+
+
+=link_to '生徒情報を更新する', edit_login_student_path(@student.id)
+=link_to '生徒情報を削除' , login_student_path(@student.id), method: :delete, data: {confirm: "削除しますか？"}

@@ -41,19 +41,10 @@ class Login::StudentsController < Login::ApplicationController
 
   def student_params
     params[:student].permit(
-      :first_name,
-      :last_name,
-      :from,
-      :image,
-      :remove_image,
-      :image_cache,
-      :description,
+      :name,
       :age,
-      :bestfilm,
-      :bestactor,
-      :bestdirector,
-      :instagram,
-      :twitter
+      :primary_language,
+      :description
     )
   end
 

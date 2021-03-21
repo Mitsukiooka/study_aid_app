@@ -1,3 +1,7 @@
 
 -if user_signed_in?
   =link_to '学習計画一覧', login_plans_path
+  -if current_user.student.present?
+    =link_to '生徒情報', login_student_path(current_user.student.id) 
+  -else
+    =link_to '生徒情報を作成', new_login_student_path
