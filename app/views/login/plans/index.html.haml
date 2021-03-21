@@ -1,0 +1,5 @@
+-@plans.each do |plan|
+  =link_to plan.title, login_plan_path(plan.id)
+  ="#{plan.start_at} ~ #{plan.end_at}"
+
+=link_to '学習計画を作成する', new_login_plan_path

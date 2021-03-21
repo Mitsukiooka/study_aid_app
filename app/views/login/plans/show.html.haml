@@ -1,0 +1,5 @@
+=@plan.title
+
+=link_to '計画一覧へ戻る', login_plans_path
+=link_to '学習計画を振り返る', edit_login_plan_path(@plan.id)
+=link_to '学習計画を削除' , login_plan_path(@plan.id), method: :delete, data: {confirm: "削除しますか？"}

@@ -1,21 +1,22 @@
-class PlansController < ApplicationController
+class Login::PlansController < Login::ApplicationController
   before_action :set_plan, except: [:index, :new, :create]
 
   def index
-    @plans = Plan.all
+    @plans = current_user.plans
   end
 
   def show
   end
 
+
   def new
-    @plan = Plan.new
+    @plan = current_user.plans.build
   end
 
   def create
-    @plan = Plan.new(plan_params)
+    @plan = current_user.plans.build(plan_params)
     if @plan.save
-      redirect_to plans_path
+      redirect_to login_plans_path
     else
       render 'new'
     end
@@ -26,7 +27,7 @@ class PlansController < ApplicationController
 
   def update
     if @plan.update(plan_params)
-      redirect_to plans_path
+      redirect_to login_plans_path
     else
       render 'edit'
     end
@@ -34,13 +35,13 @@ class PlansController < ApplicationController
 
   def destroy
     @plan.destroy
-    redirect_to plans_path
+    redirect_to login_plans_path
   end
 
   private
 
   def set_plan
-      @plan = Plan.find(params[:id])
+    @plan = current_user.plans.find(params[:id])
   end
 
   def plan_params
