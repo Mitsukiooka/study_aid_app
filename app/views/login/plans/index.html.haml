@@ -1,5 +1,14 @@
--@plans.each do |plan|
-  =link_to plan.title, login_plan_path(plan.id)
-  ="#{plan.start_at} ~ #{plan.end_at}"
-
-=link_to '学習計画を作成する', new_login_plan_path
+/ ======= Services Section =======
+%section.section
+  .container
+    .row.justify-content-center.text-center.mb-4
+      .col-5
+        %h3.h3.heading 学習計画一覧
+    .row
+      -@plans.each do |plan|
+        .col-12.col-sm-6.col-md-6.col-lg-3
+          %span.la.la-cube.la-3x.mb-4
+          %h4.h4.mb-2 
+            =link_to plan.title, login_plan_path(plan.id)
+          %p 計画期間:"#{plan.start_at} ~ #{plan.end_at}"
+  =link_to '学習計画を作成する', new_login_plan_path
