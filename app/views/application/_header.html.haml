@@ -1,8 +1,12 @@
+%li 
+  =link_to 'トップ', root_path
 -if user_signed_in?
   %li
-    = link_to 'Logout', destroy_user_session_path
+    =link_to '学習計画一覧', login_plans_path
+  %li
+    = link_to 'ログアウト', destroy_user_session_path
 -else
   %li
-    = link_to 'Sign Up', new_user_registration_path
+    = link_to 'ユーザー登録', new_user_registration_path
   %li
-    = link_to 'Login', new_user_session_path
+    = link_to 'ログイン', new_user_session_path
