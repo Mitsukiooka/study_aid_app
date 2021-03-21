@@ -15,10 +15,13 @@ PostgerSQL
 ## Setup
 1:GitHubからコードをクローン
   git clone https://github.com/Mitsukiooka/study_aid_app.git
+
 2:データベースを作成
   rails db:create
+
 3:マイグレーションでテーブルを作成
   rails db:migrate
+  
 4:サーバーを起動し、localhost:3000でアクセスできます。
   rails s
 
