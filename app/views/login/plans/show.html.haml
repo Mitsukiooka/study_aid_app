@@ -1,4 +1,8 @@
-=@plan.title
+="計画名:#{@plan.title}"
+="使用教材:#{@plan.study_aid}"
+="詳細:#{@plan.plan_detail}"
+="目標:#{@plan.plan_goal}"
+="計画期間:#{plan.start_at} ~ #{plan.end_at}"
 
 =link_to '計画一覧へ戻る', login_plans_path
 -if @plan.plan_status == :before_end
