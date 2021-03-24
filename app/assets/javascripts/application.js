@@ -2,11 +2,9 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require rails-ujs
-//= require jquery/jquery.min
-//= require bootstrap/js/bootstrap.bundle.min
-//= require jquery.easing/jquery.easing.min
-//= require php-email-form/validate
 //= require aos/aos
-//= require isotope-layout/isotope.pkgd.min
-//= require owl.carousel/owl.carousel.min
+//= require bootstrap/js/bootstrap.bundle.min
+//= require glightbox/js/glightbox.min
+//= require php-email-form/validate
+//= require swiper/swiper-bundle.min
 //= require main

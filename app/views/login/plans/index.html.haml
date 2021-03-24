@@ -1,14 +1,540 @@
-/ ======= Services Section =======
-%section.section
-  .container
-    .row.justify-content-center.text-center.mb-4
-      .col-5
-        %h3.h3.heading 学習計画一覧
-    .row
-      -@plans.each do |plan|
-        .col-12.col-sm-6.col-md-6.col-lg-3
-          %span.la.la-cube.la-3x.mb-4
-          %h4.h4.mb-2 
-            =link_to plan.title, login_plan_path(plan.id)
-          %p 計画期間:"#{plan.start_at} ~ #{plan.end_at}"
-  =link_to '学習計画を作成する', new_login_plan_path
+-# / ======= Services Section =======
+-# %section.section
+-#   .container
+-#     .row.justify-content-center.text-center.mb-4
+-#       .col-5
+-#         %h3.h3.heading 学習計画一覧
+-#     .row
+-#       -@plans.each do |plan|
+-#         .col-12.col-sm-6.col-md-6.col-lg-3
+-#           %span.la.la-cube.la-3x.mb-4
+-#           %h4.h4.mb-2 
+-#             =link_to plan.title, login_plan_path(plan.id)
+-#           %p 計画期間:"#{plan.start_at} ~ #{plan.end_at}"
+-#   =link_to '学習計画を作成する', new_login_plan_path
+
+%header#header.header.fixed-top.d-flex.align-items-center
+  .container.d-flex.align-items-center.justify-content-between
+    #logo
+      %h1
+        %a{:href => "index.html"}
+          %span> e
+          Startup
+      / Uncomment below if you prefer to use an image logo
+      / <a href="index.html"><img src="assets/img/logo.png" alt="" title="" /></a>
+    %nav#navbar.navbar
+      %ul
+        %li
+          %a.nav-link.scrollto.active{:href => "#hero"} Home
+        %li
+          %a.nav-link.scrollto{:href => "#about-us"} About
+        %li
+          %a.nav-link.scrollto{:href => "#features"} Features
+        %li
+          %a.nav-link.scrollto{:href => "#screenshots"} Screenshots
+        %li
+          %a.nav-link.scrollto{:href => "#team"} Team
+        %li
+          %a.nav-link.scrollto{:href => "#pricing"} Pricing
+        %li.dropdown
+          %a{:href => "#"}
+            %span Drop Down
+            %i.bi.bi-chevron-down
+          %ul
+            %li
+              %a{:href => "#"} Drop Down 1
+            %li.dropdown
+              %a{:href => "#"}
+                %span Deep Drop Down
+                %i.bi.bi-chevron-right
+              %ul
+                %li
+                  %a{:href => "#"} Deep Drop Down 1
+                %li
+                  %a{:href => "#"} Deep Drop Down 2
+                %li
+                  %a{:href => "#"} Deep Drop Down 3
+                %li
+                  %a{:href => "#"} Deep Drop Down 4
+                %li
+                  %a{:href => "#"} Deep Drop Down 5
+            %li
+              %a{:href => "#"} Drop Down 2
+            %li
+              %a{:href => "#"} Drop Down 3
+            %li
+              %a{:href => "#"} Drop Down 4
+        %li
+          %a.nav-link.scrollto{:href => "#contact"} Contact
+      %i.bi.bi-list.mobile-nav-toggle
+    / .navbar
+/ End Header
+/ ======= Hero Section =======
+%section#hero
+  .hero-container{"data-aos" => "fade-in"}
+    %h1 Welcome to eStartup
+    %h2 Elegant Bootstrap Template for Startups, Apps & more...
+    %img{:alt => "Hero Imgs", "data-aos" => "zoom-out", "data-aos-delay" => "100", :src => "assets/img/hero-img.png"}/
+    %a.btn-get-started.scrollto{:href => "#get-started"} Get Started
+    .btns
+      %a{:href => "#"}
+        %i.fa.fa-apple.fa-3x
+        App Store
+      %a{:href => "#"}
+        %i.fa.fa-play.fa-3x
+        Google Play
+      %a{:href => "#"}
+        %i.fa.fa-windows.fa-3x
+        windows
+/ End Hero Section
+%main#main
+  / ======= Get Started Section =======
+  %section#get-started.padd-section.text-center
+    .container{"data-aos" => "fade-up"}
+      .section-title.text-center
+        %h2 simple systeme fordiscount
+        %p.separator Integer cursus bibendum augue ac cursus .
+    .container
+      .row
+        .col-md-6.col-lg-4{"data-aos" => "zoom-in", "data-aos-delay" => "100"}
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/cloud.svg"}/
+            %h4 introducing whatsapp
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry
+            %a{:href => "#"} read more
+        .col-md-6.col-lg-4{"data-aos" => "zoom-in", "data-aos-delay" => "200"}
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/planet.svg"}/
+            %h4 user friendly interface
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry
+            %a{:href => "#"} read more
+        .col-md-6.col-lg-4{"data-aos" => "zoom-in", "data-aos-delay" => "300"}
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/asteroid.svg"}/
+            %h4 build the app everyone love
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry
+            %a{:href => "#"} read more
+  / End Get Started Section
+  / ======= About Us Section =======
+  %section#about-us.about-us.padd-section
+    .container{"data-aos" => "fade-up"}
+      .row.justify-content-center
+        .col-md-5.col-lg-3
+          %img{:alt => "About", "data-aos" => "zoom-in", "data-aos-delay" => "100", :src => "assets/img/about-img.png"}/
+        .col-md-7.col-lg-5
+          .about-content{"data-aos" => "fade-left", "data-aos-delay" => "100"}
+            %h2
+              %span> eStartup
+              UI Design Mobile
+            %p
+              Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+            %ul.list-unstyled
+              %li
+                %i.vi.bi-chevron-right>
+                Creative Design
+              %li
+                %i.vi.bi-chevron-right>
+                Retina Ready
+              %li
+                %i.vi.bi-chevron-right>
+                Easy to Use
+              %li
+                %i.vi.bi-chevron-right>
+                Unlimited Features
+              %li
+                %i.vi.bi-chevron-right>
+                Unlimited Features
+  / End About Us Section
+  / ======= Features Section =======
+  %section#features.padd-section.text-center
+    .container{"data-aos" => "fade-up"}
+      .section-title.text-center
+        %h2 Amazing Features.
+        %p.separator Integer cursus bibendum augue ac cursus .
+      .row{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+        .col-md-6.col-lg-3
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/paint-palette.svg"}/
+            %h4 creative design
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry
+        .col-md-6.col-lg-3
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/vector.svg"}/
+            %h4 Retina Ready
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry
+        .col-md-6.col-lg-3
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/design-tool.svg"}/
+            %h4 easy to use
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry
+        .col-md-6.col-lg-3
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/asteroid.svg"}/
+            %h4 Free Updates
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry
+        .col-md-6.col-lg-3
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/asteroid.svg"}/
+            %h4 Free Updates
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry
+        .col-md-6.col-lg-3
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/cloud-computing.svg"}/
+            %h4 App store support
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry
+        .col-md-6.col-lg-3
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/pixel.svg"}/
+            %h4 Perfect Pixel
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry
+        .col-md-6.col-lg-3
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/code.svg"}/
+            %h4 clean codes
+            %p Lorem Ipsum is simply dummy text of the printing and typesetting industry
+  / End Features Section
+  / ======= Screenshots Section =======
+  %section#screenshots.padd-section.text-center
+    .container{"data-aos" => "fade-up"}
+      .section-title.text-center
+        %h2 App Gallery
+        %p.separator Integer cursus bibendum augue ac cursus .
+      .screens-slider.swiper-container
+        .swiper-wrapper.align-items-center
+          .swiper-slide
+            %img.img-fluid{:alt => "", :src => "assets/img/screen/1.jpg"}/
+          .swiper-slide
+            %img.img-fluid{:alt => "", :src => "assets/img/screen/2.jpg"}/
+          .swiper-slide
+            %img.img-fluid{:alt => "", :src => "assets/img/screen/3.jpg"}/
+          .swiper-slide
+            %img.img-fluid{:alt => "", :src => "assets/img/screen/4.jpg"}/
+          .swiper-slide
+            %img.img-fluid{:alt => "", :src => "assets/img/screen/5.jpg"}/
+          .swiper-slide
+            %img.img-fluid{:alt => "", :src => "assets/img/screen/6.jpg"}/
+          .swiper-slide
+            %img.img-fluid{:alt => "", :src => "assets/img/screen/7.jpg"}/
+          .swiper-slide
+            %img.img-fluid{:alt => "", :src => "assets/img/screen/8.jpg"}/
+        .swiper-pagination
+  / End Screenshots Section
+  / ======= Video Section =======
+  %section#video.text-center
+    .overlay
+      .container-fluid.container-full{"data-aos" => "zoom-in"}
+        .row
+          %a.glightbox.play-btn{:href => "https://www.youtube.com/watch?v=jDDaplaOz7Q&feature=emb_title"}
+  / End Video Section
+  / ======= Team Section =======
+  %section#team.padd-section.text-center
+    .container{"data-aos" => "fade-up"}
+      .section-title.text-center
+        %h2 Team Member
+        %p.separator Integer cursus bibendum augue ac cursus .
+      .row
+        .col-md-6.col-md-4.col-lg-3{"data-aos" => "zoom-in", "data-aos-delay" => "100"}
+          .team-block.bottom
+            %img.img-responsive{:alt => "img", :src => "assets/img/team/1.jpg"}/
+            .team-content
+              %ul.list-unstyled
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-facebook
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-twitter
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-linkedin
+              %span manager
+              %h4 Kimberly Tran
+        .col-md-6.col-md-4.col-lg-3{"data-aos" => "zoom-in", "data-aos-delay" => "200"}
+          .team-block.bottom
+            %img.img-responsive{:alt => "img", :src => "assets/img/team/2.jpg"}/
+            .team-content
+              %ul.list-unstyled
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-facebook
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-twitter
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-linkedin
+              %span manager
+              %h4 Kimberly Tran
+        .col-md-6.col-md-4.col-lg-3{"data-aos" => "zoom-in", "data-aos-delay" => "300"}
+          .team-block.bottom
+            %img.img-responsive{:alt => "img", :src => "assets/img/team/3.jpg"}/
+            .team-content
+              %ul.list-unstyled
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-facebook
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-twitter
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-linkedin
+              %span manager
+              %h4 Kimberly Tran
+        .col-md-6.col-md-4.col-lg-3{"data-aos" => "zoom-in", "data-aos-delay" => "400"}
+          .team-block.bottom
+            %img.img-responsive{:alt => "img", :src => "assets/img/team/4.jpg"}/
+            .team-content
+              %ul.list-unstyled
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-facebook
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-twitter
+                %li
+                  %a{:href => "#"}
+                    %i.bi.bi-linkedin
+              %span manager
+              %h4 Kimberly Tran
+  / End Team Section
+  / ======= Testimonials Section =======
+  %section#testimonials.padd-section.text-center
+    .container{"data-aos" => "fade-up"}
+      .row.justify-content-center
+        .col-md-8
+          .testimonials-content
+            #carousel-example-generic.carousel.slide{"data-bs-ride" => "carousel"}
+              .carousel-inner{:role => "listbox"}
+                .carousel-item.active
+                  .top-top
+                    %h2 Our Users Speack volumes us
+                    %p
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                      specimen book. It has survived not only five centuries.
+                    %h4
+                      Kimberly Tran
+                      %span manager
+                .carousel-item
+                  .top-top
+                    %h2 Our Users Speack volumes us
+                    %p
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                      specimen book. It has survived not only five centuries.
+                    %h4
+                      Henderson
+                      %span manager
+                .carousel-item
+                  .top-top
+                    %h2 Our Users Speack volumes us
+                    %p
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+                      specimen book. It has survived not only five centuries.
+                    %h4
+                      David Spark
+                      %span manager
+              .btm-btm
+                %ul.list-unstyled.carousel-indicators
+                  %li.active{"data-bs-slide-to" => "0", "data-bs-target" => "#carousel-example-generic"}
+                  %li{"data-bs-slide-to" => "1", "data-bs-target" => "#carousel-example-generic"}
+                  %li{"data-bs-slide-to" => "2", "data-bs-target" => "#carousel-example-generic"}
+  / End Testimonials Section
+  / ======= Pricing Section =======
+  %section#pricing.padd-section.text-cente
+    .container{"data-aos" => "fade-up"}
+      .section-title.text-center
+        %h2 Meet With Price
+        %p.separator Integer cursus bibendum augue ac cursus .
+      .row{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+        .col-md-6.col-lg-3
+          .block-pricing
+            .table
+              %h4 basic
+              %h2 $29
+              %ul.list-unstyled
+                %li
+                  %b 4 GB
+                  Ram
+                %li
+                  %b 7/24
+                  Tech Support
+                %li
+                  %b 40 GB
+                  SSD Cloud Storage
+                %li Monthly Backups
+                %li Palo Protection
+              .table_btn
+                %a.btn{:href => "#"}
+                  %i.bi.bi-cart
+                  Buy Now
+        .col-md-6.col-lg-3
+          .block-pricing
+            .table
+              %h4 PERSONAL
+              %h2 $29
+              %ul.list-unstyled
+                %li
+                  %b 4 GB
+                  Ram
+                %li
+                  %b 7/24
+                  Tech Support
+                %li
+                  %b 40 GB
+                  SSD Cloud Storage
+                %li Monthly Backups
+                %li Palo Protection
+              .table_btn
+                %a.btn{:href => "#"}
+                  %i.bi.bi-cart
+                  Buy Now
+        .col-md-6.col-lg-3
+          .block-pricing
+            .table
+              %h4 BUSINESS
+              %h2 $29
+              %ul.list-unstyled
+                %li
+                  %b 4 GB
+                  Ram
+                %li
+                  %b 7/24
+                  Tech Support
+                %li
+                  %b 40 GB
+                  SSD Cloud Storage
+                %li Monthly Backups
+                %li Palo Protection
+              .table_btn
+                %a.btn{:href => "#"}
+                  %i.bi.bi-cart
+                  Buy Now
+        .col-md-6.col-lg-3
+          .block-pricing
+            .table
+              %h4 profeesional
+              %h2 $29
+              %ul.list-unstyled
+                %li
+                  %b 4 GB
+                  Ram
+                %li
+                  %b 7/24
+                  Tech Support
+                %li
+                  %b 40 GB
+                  SSD Cloud Storage
+                %li Monthly Backups
+                %li Palo Protection
+              .table_btn
+                %a.btn{:href => "#"}
+                  %i.bi.bi-cart
+                  Buy Now
+  / End Pricing Section
+  / ======= Blog Section =======
+  %section#blog.padd-sectio
+    .container{"data-aos" => "fade-up"}
+      .section-title.text-center
+        %h2 Latest posts
+        %p.separator Integer cursus bibendum augue ac cursus .
+      .row{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+        .col-md-6.col-lg-4
+          .block-blog.text-left
+            %a{:href => "#"}
+              %img{:alt => "img", :src => "assets/img/blog/blog-image-1.jpg"}/
+            .content-blog
+              %h4
+                %a{:href => "#"} whats isthe difference between good and bat typography
+              %span 05, juin 2017
+              %a.float-end.readmore{:href => "#"} read more
+        .col-md-6.col-lg-4
+          .block-blog.text-left
+            %a{:href => "#"}
+              %img.img-responsive{:alt => "img", :src => "assets/img/blog/blog-image-2.jpg"}/
+            .content-blog
+              %h4
+                %a{:href => "#"} whats isthe difference between good and bat typography
+              %span 05, juin 2017
+              %a.float-end.readmore{:href => "#"} read more
+        .col-md-6.col-lg-4
+          .block-blog.text-left
+            %a{:href => "#"}
+              %img.img-responsive{:alt => "img", :src => "assets/img/blog/blog-image-3.jpg"}/
+            .content-blog
+              %h4
+                %a{:href => "#"} whats isthe difference between good and bat typography
+              %span 05, juin 2017
+              %a.float-end.readmore{:href => "#"} read more
+  / End Blog Section
+  / ======= Newsletter Section =======
+  %section#newsletter.newsletter.text-center
+    .overlay.padd-section
+      .container{"data-aos" => "zoom-in"}
+        .row.justify-content-center
+          .col-md-9.col-lg-6
+            %form.d-flex{:action => "#", :method => "POST"}
+              %input.form-control{:name => "email", :placeholder => "Email Adress", :type => "email"}/
+              %button.btn.btn-default{:type => "submit"}
+                %i.bi.bi-location-arrow>
+                Subscribe
+        %ul.list-unstyled
+          %li
+            %a{:href => "#"}
+              %i.bi.bi-facebook
+          %li
+            %a{:href => "#"}
+              %i.bi.bi-twitter
+          %li
+            %a{:href => "#"}
+              %i.bi.bi-instagram
+          %li
+            %a{:href => "#"}
+              %i.bi.bi-linkedin
+  / End Newsletter Section
+  / ======= Contact Section =======
+  %section#contact.padd-section
+    .container{"data-aos" => "fade-up"}
+      .section-title.text-center
+        %h2 Contact
+        %p.separator Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+      .row.justify-content-center{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+        .col-lg-3.col-md-4
+          .info
+            %div
+              %i.bi.bi-geo-alt
+              %p
+                A108 Adam Street
+                %br>/
+                New York, NY 535022
+            .email
+              %i.bi.bi-envelope
+              %p info@example.com
+            %div
+              %i.bi.bi-phone
+              %p +1 5589 55488 55s
+          .social-links
+            %a.twitter{:href => "#"}
+              %i.bi.bi-twitter
+            %a.facebook{:href => "#"}
+              %i.bi.bi-facebook
+            %a.instagram{:href => "#"}
+              %i.bi.bi-instagram
+            %a.linkedin{:href => "#"}
+              %i.bi.bi-linkedin
+        .col-lg-5.col-md-8
+          .form
+            %form.php-email-form{:action => "forms/contact.php", :method => "post", :role => "form"}
+              .form-group
+                %input#name.form-control{:name => "name", :placeholder => "Your Name", :required => "", :type => "text"}/
+              .form-group.mt-3
+                %input#email.form-control{:name => "email", :placeholder => "Your Email", :required => "", :type => "email"}/
+              .form-group.mt-3
+                %input#subject.form-control{:name => "subject", :placeholder => "Subject", :required => "", :type => "text"}/
+              .form-group.mt-3
+                %textarea.form-control{:name => "message", :placeholder => "Message", :required => "", :rows => "5"}
+              .my-3
+                .loading Loading
+                .error-message
+                .sent-message Your message has been sent. Thank you!
+              .text-center
+                %button{:type => "submit"} Send Message
