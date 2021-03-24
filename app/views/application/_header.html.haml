@@ -1,12 +1,25 @@
 %li 
-  =link_to 'トップ', root_path
--if user_signed_in?
-  %li
-    =link_to '学習計画一覧', login_plans_path
-  %li
-    = link_to 'ログアウト', destroy_user_session_path
--else
-  %li
-    = link_to 'ユーザー登録', new_user_registration_path
-  %li
-    = link_to 'ログイン', new_user_session_path
+  
+
+%header#header.header.fixed-top.d-flex.align-items-center
+  .container.d-flex.align-items-center.justify-content-between
+    #logo
+      %h1
+        %span> Study
+        Aid
+      / Uncomment below if you prefer to use an image logo
+      / <a href="index.html"><img src="assets/img/logo.png" alt="" title="" /></a>
+    %nav#navbar.navbar
+      %ul
+        %li
+          =link_to 'トップ', root_path, class: 'nav-link.scrollto'
+        -if user_signed_in?
+          %li
+            =link_to '学習計画一覧', login_plans_path, class: 'nav-link.scrollto'
+          %li
+            = link_to 'ログアウト', destroy_user_session_path, class: 'nav-link.scrollto'
+        -else
+          %li
+            = link_to 'ユーザー登録', new_user_registration_path, class: 'nav-link.scrollto'
+          %li
+            = link_to 'ログイン', new_user_session_path, class: 'nav-link.scrollto'

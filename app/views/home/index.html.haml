@@ -1,7 +1,10 @@
-
--if user_signed_in?
-  =link_to '学習計画一覧', login_plans_path
-  -if current_user.student.present?
-    =link_to '生徒情報', login_student_path(current_user.student.id) 
-  -else
-    =link_to '生徒情報を作成', new_login_student_path
+%section#hero
+  .hero-container{"data-aos" => "fade-in"}
+    %h1 Welcome to StudyAid!!
+    %img{:alt => "Hero Imgs", "data-aos" => "zoom-out", "data-aos-delay" => "100", :src => "assets/img/hero-img.png"}/
+    -if !user_signed_in?
+      =link_to 'ログイン', login_plans_path, class: 'btn-get-started.scrollto'
+      -if current_user.student.present?
+        =link_to '生徒情報', login_student_path(current_user.student.id), class: 'btn-get-started.scrollto'
+      -else
+        =link_to '生徒情報を作成', new_login_student_path, class: 'btn-get-started.scrollto'
