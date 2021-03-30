@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      plan: 学習計画
+    attributes:
+      plan:
+        title: 計画名
+        study_aid: 使用教材
+        plan_detail: 計画詳細
+        plan_goal: 計画目標
+        status: 進捗状況
+        feedback_comment: フィードバック
+        start_at: 計画開始日
+        end_at: 計画終了日
