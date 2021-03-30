@@ -1,2 +1,8 @@
-=render 'form'
-=link_to '戻る', login_plans_path
+%section#contact.padd-section
+  .container{"data-aos" => "fade-up"}
+    .section-title.text-center
+      %h2 学習計画作成
+      %p.separator 学習計画を作成しよう！
+    =render 'form'
+  .container{"data-aos" => "fade-up"}
+    =link_to '戻る', login_plans_path, class: 'btn-top'

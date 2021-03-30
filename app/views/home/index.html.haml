@@ -2,10 +2,10 @@
   .hero-container{"data-aos" => "fade-in"}
     %img{:alt => "Hero Imgs", "data-aos" => "zoom-out", "data-aos-delay" => "100", :src => "assets/img/hero-img.png"}/
     -if user_signed_in?
-      =link_to '学習計画一覧', login_plans_path, class: 'btn-get-started.scrollto'
+      =link_to '学習計画一覧', login_plans_path, class: 'btn-top'
       -if current_user.student.present?
-        =link_to '生徒情報', login_student_path(current_user.student.id), class: 'btn-get-started.scrollto'
+        =link_to '生徒情報', login_student_path(current_user.student.id), class: 'btn-top'
       -else
-        =link_to '生徒情報を作成', new_login_student_path, class: 'btn-get-started.scrollto'
+        =link_to '生徒情報を作成', new_login_student_path, class: 'btn-top'
     -else
-      =link_to 'ログイン', new_user_session_path, class: 'btn-get-started.scrollto'
+      =link_to 'ログイン', new_user_session_path, class: 'btn-top'

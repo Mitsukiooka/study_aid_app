@@ -1,1 +1,8 @@
-=render 'form'
+%section#contact.padd-section
+  .container{"data-aos" => "fade-up"}
+    .section-title.text-center
+      %h2 学習計画変更
+      %p.separator 学習計画を変更しよう！
+    =render 'form'
+  .container{"data-aos" => "fade-up"}
+    =link_to '戻る', login_plan_path(@plan.id), class: 'btn-top'

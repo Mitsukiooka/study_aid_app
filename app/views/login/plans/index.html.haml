@@ -19,3 +19,6 @@
                   "#{plan.study_aid}"
               .table_btn
                 =link_to '詳細', login_plan_path(plan.id), class: 'btn'
+  .container{"data-aos" => "fade-up"}
+    =link_to '学習計画を作成', new_login_plan_path, class: 'btn-top'
+    =link_to '戻る', root_path, class: 'btn-top'

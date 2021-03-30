@@ -2,3 +2,4 @@
   =f.select :status, Plan.status.options
   =f.text_area :feedback_comment
   =f.submit
+=link_to '戻る', login_plan_path(@plan.id), class: 'btn-top'

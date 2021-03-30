@@ -1,8 +1,24 @@
-=bootstrap_form_with model: [:login, @plan], local: true do |f|
-  =f.text_field :title
-  =f.text_field :study_aid
-  =f.text_area :plan_detail
-  =f.text_area :plan_goal
-  =f.date_select :start_at
-  =f.date_select :end_at
-  =f.submit
+.row.justify-content-center{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+  .col-lg-12.col-md-12
+    .form
+      -# %form.php-email-form{:action => "forms/contact.php", :method => "post", :role => "form"}
+      =bootstrap_form_with model: [:login, @plan], local: true do |f|
+        .form-group
+          -# %input#name.form-control{:name => "name", :placeholder => "Your Name", :required => "", :type => "text"}/
+          =f.text_field :title
+        .form-group.mt-3
+          -# %input#email.form-control{:name => "email", :placeholder => "Your Email", :required => "", :type => "email"}/
+          =f.text_field :study_aid
+        .form-group.mt-3
+          -# %input#subject.form-control{:name => "subject", :placeholder => "Subject", :required => "", :type => "text"}/
+          =f.text_area :plan_detail
+        .form-group.mt-3
+          -# %textarea.form-control{:name => "message", :placeholder => "Message", :required => "", :rows => "5"}
+          =f.text_area :plan_goal
+        .form-group.mt-3
+          =f.date_select :start_at
+        .form-group.mt-3
+          =f.date_select :end_at
+        .text-center
+          -# %button{:type => "submit"} Send Message
+          =f.submit

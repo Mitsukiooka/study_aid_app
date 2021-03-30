@@ -35,10 +35,11 @@
           %h4 計画目標
           %p 
             #{@plan.plan_goal}
-=link_to '計画一覧へ戻る', login_plans_path
--if @plan.plan_status == :before_end
-  =link_to '学習計画を更新する', edit_login_plan_path(@plan.id)
--else
-  =link_to '学習計画を振り返る', edit_login_plan_path(@plan.id)
-=link_to '学習計画を削除' , login_plan_path(@plan.id), method: :delete, data: {confirm: "削除しますか？"}
-=link_to '戻る', login_plans_path
+  .container{"data-aos" => "fade-up"}
+    =link_to '計画一覧へ戻る', login_plans_path, class: 'btn-top'
+    -if @plan.plan_status == :before_end
+      =link_to '学習計画を更新する', edit_login_plan_path(@plan.id), class: 'btn-top'
+    -else
+      =link_to '学習計画を振り返る', edit_login_plan_path(@plan.id), class: 'btn-top'
+    =link_to '学習計画を削除' , login_plan_path(@plan.id), method: :delete, data: {confirm: "削除しますか？"}, class: 'btn-top'
+    =link_to '戻る', login_plans_path, class: 'btn-top'
