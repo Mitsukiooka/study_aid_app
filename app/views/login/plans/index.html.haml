@@ -31,10 +31,5 @@
                 %li
                   %b 使用教材
                   "#{plan.study_aid}"
-                -if plan.plan_status == :after_end
-                  %li
-                    %b 進捗
-                    "#{plan.status}"
               .table_btn
                 =link_to '詳細', login_plan_path(plan.id), class: 'btn'
-  / End Pricing Section

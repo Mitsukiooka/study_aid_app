@@ -1,9 +1,40 @@
-="計画名:#{@plan.title}"
-="使用教材:#{@plan.study_aid}"
-="詳細:#{@plan.plan_detail}"
-="目標:#{@plan.plan_goal}"
-="計画期間:#{@plan.start_at} ~ #{@plan.end_at}"
-
+%section#features.padd-section.text-center
+  .container{"data-aos" => "fade-up"}
+    .section-title.text-center
+      %h2 
+        #{@plan.title}
+      %p.separator 学習計画詳細
+    .row{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+      .col-md-6.col-lg-4
+        .feature-block
+          %img{:alt => "img", :src => "assets/img/svg/paint-palette.svg"}/
+          %h4 使用教材
+          %p 
+            #{@plan.study_aid}
+      .col-md-6.col-lg-4
+        .feature-block
+          %img{:alt => "img", :src => "assets/img/svg/asteroid.svg"}/
+          %h4 計画開始日
+          %p 
+            #{@plan.start_at}
+      .col-md-6.col-lg-4
+        .feature-block
+          %img{:alt => "img", :src => "assets/img/svg/asteroid.svg"}/
+          %h4 計画終了日
+          %p 
+            #{@plan.end_at}
+      .col-md-6.col-lg-6
+        .feature-block
+          %img{:alt => "img", :src => "assets/img/svg/vector.svg"}/
+          %h4 計画詳細
+          %p 
+            #{@plan.plan_detail}
+      .col-md-6.col-lg-6
+        .feature-block
+          %img{:alt => "img", :src => "assets/img/svg/design-tool.svg"}/
+          %h4 計画目標
+          %p 
+            #{@plan.plan_goal}
 =link_to '計画一覧へ戻る', login_plans_path
 -if @plan.plan_status == :before_end
   =link_to '学習計画を更新する', edit_login_plan_path(@plan.id)

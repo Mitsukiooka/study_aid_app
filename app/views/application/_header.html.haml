@@ -1,12 +1,10 @@
-%li 
-  
-
 %header#header.header.fixed-top.d-flex.align-items-center
   .container.d-flex.align-items-center.justify-content-between
     #logo
       %h1
-        %span> Study
-        Aid
+        =link_to root_path do
+          %span> Study
+          Aid
       / Uncomment below if you prefer to use an image logo
       / <a href="index.html"><img src="assets/img/logo.png" alt="" title="" /></a>
     %nav#navbar.navbar
