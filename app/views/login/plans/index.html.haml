@@ -1,17 +1,3 @@
--# / ======= Services Section =======
--# %section.section
--#   .container
--#     .row.justify-content-center.text-center.mb-4
--#       .col-5
--#         %h3.h3.heading 学習計画一覧
--#     .row
--#       
--#         .col-12.col-sm-6.col-md-6.col-lg-3
--#           %span.la.la-cube.la-3x.mb-4
--#           %h4.h4.mb-2 
--#             =link_to plan.title, l
--#           %p 計画期間:"#{plan.start_at} ~ #{plan.end_at}"
--#   =link_to '学習計画を作成する', new_login_plan_path
 %section#pricing.padd-section.text-cente
   .container{"data-aos" => "fade-up"}
     .section-title.text-center
@@ -19,7 +5,7 @@
       %p.separator 学習計画を振り返ろう！
     .row{"data-aos" => "fade-up", "data-aos-delay" => "100"}
       -@plans.each do |plan|
-        .col-md-6.col-lg-4
+        .col-md-6.col-lg-4.py-3
           .block-pricing
             .table 
               %h2 
