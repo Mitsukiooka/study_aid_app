@@ -1,21 +1,48 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+-# %h2 Sign up
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#   = render "devise/shared/error_messages", resource: resource
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     - if @minimum_password_length
+-#       %em
+-#         (#{@minimum_password_length} characters minimum)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#   .field
+-#     = f.label :password_confirmation
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .actions
+-#     = f.submit "Sign up"
+
+%section#contact.padd-section
+  .container{"data-aos" => "fade-up"}
+    .section-title.text-center
+      %h2 ユーザー登録
+    .row.justify-content-center{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+      .col-lg-6.col-md-12
+        .form
+          =form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = render "devise/shared/error_messages", resource: resource
+            .form-group
+              = f.label :email
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email"
+            .form-group.mt-3
+              = f.label :password
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} characters minimum)
+              %br/
+              = f.password_field :password, autocomplete: "new-password"
+            .form-group.mt-3
+              = f.label :password_confirmation
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "new-password"
+            .text-center
+              =f.submit '登録'
+  = render "devise/shared/links"
