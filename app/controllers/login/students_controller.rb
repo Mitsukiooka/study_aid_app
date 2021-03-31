@@ -44,7 +44,8 @@ class Login::StudentsController < Login::ApplicationController
       :name,
       :age,
       :primary_language,
-      :description
+      :description,
+      :image
     )
   end
 
