@@ -12,6 +12,8 @@
 body {
   background-color: #fff;
   color: #333;
+  margin-top: 10px;
+  background: url("../img/bg.png") bottom no-repeat;
 }
 
 h1, h2, h3, h4, h5, h6 {

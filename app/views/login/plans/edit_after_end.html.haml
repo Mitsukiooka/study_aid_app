@@ -1,5 +1,17 @@
-=bootstrap_form_with model: [:login, @plan], local: true do |f|
-  =f.select :status, Plan.status.options
-  =f.text_area :feedback_comment
-  =f.submit
-=link_to '戻る', login_plan_path(@plan.id), class: 'btn-top'
+%section#contact.padd-section
+  .container{"data-aos" => "fade-up"}
+    .section-title.text-center
+      %h2 学習計画変更
+      %p.separator 学習計画を変更しよう！
+    .row.justify-content-center{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+      .col-lg-12.col-md-12
+        .form
+          =bootstrap_form_with model: [:login, @plan], local: true do |f|
+            .form-group
+              =f.select :status, Plan.status.options
+            .form-group.mt-3
+              =f.text_area :feedback_comment
+            .form-group.mt-3
+              =f.submit
+  .container{"data-aos" => "fade-up"}
+    =link_to '戻る', login_plan_path(@plan.id), class: 'btn-top'

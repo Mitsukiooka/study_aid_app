@@ -1,6 +1,7 @@
 %section#hero
   .hero-container{"data-aos" => "fade-in"}
-    %img{:alt => "Hero Imgs", "data-aos" => "zoom-out", "data-aos-delay" => "100", :src => "assets/img/hero-img.png"}/
+    %h1 Welcome to StudyAid!
+    %h2 あなたの学習をサポートします！
     -if user_signed_in?
       =link_to '学習計画一覧', login_plans_path, class: 'btn-top'
       -if current_user.student.present?
