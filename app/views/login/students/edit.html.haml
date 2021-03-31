@@ -1,1 +1,8 @@
-=render 'form'
+%section#contact.padd-section
+  .container{"data-aos" => "fade-up"}
+    .section-title.text-center
+      %h2 生徒情報変更
+      %p.separator 生徒情報を変更しよう！
+    =render 'form'
+  .container{"data-aos" => "fade-up"}
+    =link_to '戻る', login_student_path(@student.id), class: 'btn-top'

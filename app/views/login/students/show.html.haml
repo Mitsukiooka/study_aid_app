@@ -1,5 +1,22 @@
-=@student.name
-
-
-=link_to '生徒情報を更新する', edit_login_student_path(@student.id)
-=link_to '生徒情報を削除' , login_student_path(@student.id), method: :delete, data: {confirm: "削除しますか？"}
+%section#about-us.about-us.padd-section
+  .container{"data-aos" => "fade-up"}
+    .row.justify-content-center
+      .col-md-5.col-lg-3
+        %img{:alt => "About", "data-aos" => "zoom-in", "data-aos-delay" => "100", :src => "assets/img/about-img.png"}/
+      .col-md-7.col-lg-5
+        .about-content{"data-aos" => "fade-left", "data-aos-delay" => "100"}
+          %h2
+            %span> #{@student.name}
+            生徒情報
+          %p
+            #{@student.description}
+          %ul.list-unstyled
+            %li
+              %i.vi.bi-chevron-right>
+              #{@student.age}
+            %li
+              %i.vi.bi-chevron-right>
+              #{@student.primary_language}
+  .container{"data-aos" => "fade-up"}
+    =link_to '生徒情報を更新する', edit_login_student_path(@student.id), class: 'btn-top'
+    =link_to '生徒情報を削除' , login_student_path(@student.id), method: :delete, data: {confirm: "削除しますか？"}, class: 'btn-top'

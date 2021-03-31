@@ -1,6 +1,18 @@
-=bootstrap_form_with model: [:login, @student], local: true do |f|
-  =f.text_field :name
-  =f.number_field :age
-  =f.text_field :primary_language
-  =f.text_area :description
-  =f.submit
+.row.justify-content-center{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+  .col-lg-12.col-md-12
+    .form
+      =bootstrap_form_with model: [:login, @student], local: true do |f|
+        .form-group
+          =f.text_field :name
+        .form-group.mt-3
+          =f.number_field :age
+        .form-group.mt-3
+          =f.text_field :primary_language
+        .form-group.mt-3
+          =f.text_area :description
+        .form-group.mt-3
+          =f.date_select :start_at
+        .form-group.mt-3
+          =f.date_select :end_at
+        .text-center
+          =f.submit

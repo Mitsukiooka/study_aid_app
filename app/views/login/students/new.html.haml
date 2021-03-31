@@ -1,1 +1,8 @@
-=render 'form'
+%section#contact.padd-section
+  .container{"data-aos" => "fade-up"}
+    .section-title.text-center
+      %h2 生徒情報作成
+      %p.separator 生徒情報を作成しよう！
+    =render 'form'
+  .container{"data-aos" => "fade-up"}
+    =link_to '戻る', root_path, class: 'btn-top'
