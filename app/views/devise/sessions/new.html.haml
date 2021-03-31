@@ -1,17 +1,23 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+%section#contact.padd-section
+  .container{"data-aos" => "fade-up"}
+    .section-title.text-center
+      %h2 ログイン
+    .row.justify-content-center{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+      .col-lg-6.col-md-12
+        .form
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .form-group
+              =f.label :email
+              %br
+              = f.email_field :email, autofocus: true, autocomplete: "email"
+            .form-group.mt-3
+              = f.label :password
+              %br/
+              = f.password_field :password, autocomplete: "current-password"
+            - if devise_mapping.rememberable?
+              .form-group.mt-3
+                = f.check_box :remember_me
+                = f.label :remember_me
+            .text-center
+              =f.submit 'ログイン'
+  = render "devise/shared/links"
