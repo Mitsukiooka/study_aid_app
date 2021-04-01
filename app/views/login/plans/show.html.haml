@@ -8,44 +8,44 @@
       .col-md-6.col-lg-4
         .feature-block
           %img{:alt => "img", :src => "assets/img/svg/paint-palette.svg"}/
-          %h4 使用教材
+          %h4=t('activerecord.attributes.plan.study_aid')
           %p 
             #{@plan.study_aid}
       .col-md-6.col-lg-4
         .feature-block
           %img{:alt => "img", :src => "assets/img/svg/asteroid.svg"}/
-          %h4 計画開始日
+          %h4=t('activerecord.attributes.plan.start_at')
           %p 
-            #{@plan.start_at}
+            #{I18n.l(@plan.start_at, format: :date)}
       .col-md-6.col-lg-4
         .feature-block
           %img{:alt => "img", :src => "assets/img/svg/asteroid.svg"}/
-          %h4 計画終了日
+          %h4=t('activerecord.attributes.plan.end_at')
           %p 
-            #{@plan.end_at}
+            #{I18n.l(@plan.end_at, format: :date)}
       .col-md-6.col-lg-6
         .feature-block
           %img{:alt => "img", :src => "assets/img/svg/vector.svg"}/
-          %h4 計画詳細
+          %h4=t('activerecord.attributes.plan.plan_detail')
           %p 
             #{@plan.plan_detail}
       .col-md-6.col-lg-6
         .feature-block
           %img{:alt => "img", :src => "assets/img/svg/design-tool.svg"}/
-          %h4 計画目標
+          %h4=t('activerecord.attributes.plan.plan_goal')
           %p 
             #{@plan.plan_goal}
       -if @plan.plan_status == :after_end
         .col-md-6.col-lg-4
           .feature-block
             %img{:alt => "img", :src => "assets/img/svg/vector.svg"}/
-            %h4 達成評価
+            %h4=t('activerecord.attributes.plan.status')
             %p 
               #{@plan.status}
         .col-md-6.col-lg-8
           .feature-block
             %img{:alt => "img", :src => "assets/img/svg/design-tool.svg"}/
-            %h4 フィードバック
+            %h4=t('activerecord.attributes.plan.feedback_comment')
             %p 
               #{@plan.feedback_comment}
   .container{"data-aos" => "fade-up"}

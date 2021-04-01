@@ -8,18 +8,18 @@
         .col-md-6.col-lg-4.py-3
           .block-pricing
             .table 
-              %h2 
+              %h3 
                 #{plan.title}
               %ul.list-unstyled
                 -if plan.plan_status == :before_end
                   %li
-                    %b 期間
-                    #{plan.start_at} 〜 #{plan.end_at}
+                    %b=t('activerecord.attributes.plan.period')
+                    #{I18n.l(plan.start_at, format: :date)} 〜 #{I18n.l(plan.end_at, format: :date)}
                 -else
                   %li
-                    %b 学習期間は終了しました
+                    %b 計画期間は終了しました
                 %li
-                  %b 使用教材
+                  %b=t('activerecord.attributes.plan.study_aid')
                   #{plan.study_aid}
               .table_btn
                 =link_to '詳細', login_plan_path(plan.id), class: 'btn'
