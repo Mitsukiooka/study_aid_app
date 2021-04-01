@@ -6,16 +6,16 @@
       .col-md-7.col-lg-5
         .about-content{"data-aos" => "fade-left", "data-aos-delay" => "100"}
           %h2
-            %span> #{@student.name}
-            生徒情報
+            #{@student.name}
+          %b=t('activerecord.attributes.student.description')
           %p
             #{@student.description}
           %ul.list-unstyled
             %li
-              %i.vi.bi-chevron-right>
+              %b=t('activerecord.attributes.student.age')
               #{@student.age}
             %li
-              %i.vi.bi-chevron-right>
+              %b=t('activerecord.attributes.student.primary_language')
               #{@student.primary_language}
   .container{"data-aos" => "fade-up"}
     =link_to '生徒情報を更新する', edit_login_student_path(@student.id), class: 'btn-top'

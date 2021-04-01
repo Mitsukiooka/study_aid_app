@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       plan: 学習計画
+      student: 生徒情報
     attributes:
       plan:
         title: 計画名
@@ -13,3 +14,8 @@ ja:
         start_at: 計画開始日
         end_at: 計画終了日
         period: 計画期間
+      student:
+        name: 氏名
+        age: 年齢
+        primary_language: 使用言語
+        description: 自己紹介
