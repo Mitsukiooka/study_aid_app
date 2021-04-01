@@ -25,7 +25,7 @@ class PlanExport
       plan.study_aid,
       plan.plan_detail,
       plan.plan_goal,
-      plan.status,
+      plan.status_text,
       plan.feedback_comment,
       plan.start_at,
       plan.end_at

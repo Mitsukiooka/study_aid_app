@@ -40,7 +40,7 @@ class Login::PlansController < Login::ApplicationController
   end
 
   def export
-    @plans = current_user.plans.by_date
+    @plans = current_user.plans.ended
     @plan_export = PlanExport.new
     respond_to do |format|
       format.csv do
