@@ -2,7 +2,7 @@ class Login::PlansController < Login::ApplicationController
   before_action :set_plan, except: [:index, :new, :create]
 
   def index
-    @plans = current_user.plans
+    @plans = current_user.plans.by_date
   end
 
   def show

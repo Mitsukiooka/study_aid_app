@@ -14,6 +14,9 @@
         -if user_signed_in?
           %li
             =link_to '学習計画一覧', login_plans_path, class: 'nav-link.scrollto'
+          -if current_user.student.present?
+            %li
+              =link_to '生徒情報', login_student_path(current_user.student.id), class: 'nav-link.scrollto'
           %li
             = link_to 'ログアウト', destroy_user_session_path, class: 'nav-link.scrollto'
         -else

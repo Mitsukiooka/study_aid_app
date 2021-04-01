@@ -9,14 +9,18 @@
           .block-pricing
             .table 
               %h2 
-                "#{plan.title}"
+                #{plan.title}
               %ul.list-unstyled
-                %li
-                  %b 期間
-                  "#{plan.start_at} 〜 #{plan.end_at}"
+                -if plan.plan_status == :before_end
+                  %li
+                    %b 期間
+                    #{plan.start_at} 〜 #{plan.end_at}
+                -else
+                  %li
+                    %b 学習期間は終了しました
                 %li
                   %b 使用教材
-                  "#{plan.study_aid}"
+                  #{plan.study_aid}
               .table_btn
                 =link_to '詳細', login_plan_path(plan.id), class: 'btn'
   .container{"data-aos" => "fade-up"}

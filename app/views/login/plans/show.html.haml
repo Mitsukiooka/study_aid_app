@@ -35,6 +35,19 @@
           %h4 計画目標
           %p 
             #{@plan.plan_goal}
+      -if @plan.plan_status == :after_end
+        .col-md-6.col-lg-4
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/vector.svg"}/
+            %h4 達成評価
+            %p 
+              #{@plan.status}
+        .col-md-6.col-lg-8
+          .feature-block
+            %img{:alt => "img", :src => "assets/img/svg/design-tool.svg"}/
+            %h4 フィードバック
+            %p 
+              #{@plan.feedback_comment}
   .container{"data-aos" => "fade-up"}
     =link_to '計画一覧へ戻る', login_plans_path, class: 'btn-top'
     -if @plan.plan_status == :before_end
