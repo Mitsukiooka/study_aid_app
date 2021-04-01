@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   namespace :login do
     get 'my_page/index'
     root to: 'my_page#index'
-    resources :plans
+    resources :plans do
+      post 'export' => 'plans#export', on: :collection, defaults: { format: "csv" }
+    end
     resources :students, except: [:index]
   end
 end

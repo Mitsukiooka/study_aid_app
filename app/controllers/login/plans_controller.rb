@@ -1,5 +1,5 @@
 class Login::PlansController < Login::ApplicationController
-  before_action :set_plan, except: [:index, :new, :create]
+  before_action :set_plan, except: [:index, :new, :create, :export]
 
   def index
     @plans = current_user.plans.by_date
@@ -39,6 +39,16 @@ class Login::PlansController < Login::ApplicationController
     redirect_to login_plans_path
   end
 
+  def export
+    @plans = current_user.plans.by_date
+    @plan_export = PlanExport.new
+    respond_to do |format|
+      format.csv do
+        render_csv
+      end
+    end
+  end
+
   private
 
   def set_plan
@@ -49,4 +59,24 @@ class Login::PlansController < Login::ApplicationController
     params[:plan].permit(:title, :study_aid, :plan_detail, :plan_goal, :status,
       :feedback_comment, :start_at, :end_at)
   end
+
+  def render_csv
+    set_file_headers
+    set_streaming_headers
+    response.status = 200
+    self.response_body = @plan_export.csv_rows(@plans)
+  end
+
+  def set_file_headers
+    headers["Content-Type"] = "text/csv"
+    headers["Content-disposition"] = "attachment; filename=\"#{@plan_export.filename}\""
+  end
+
+  def set_streaming_headers
+    #nginx doc: Setting this to "no" will allow unbuffered responses suitable for Comet and HTTP streaming applications
+    headers['X-Accel-Buffering'] = 'no'
+    headers["Cache-Control"] ||= "no-cache"
+    headers.delete("Content-Length")
+  end
+
 end

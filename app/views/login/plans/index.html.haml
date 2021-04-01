@@ -26,3 +26,5 @@
   .container{"data-aos" => "fade-up"}
     =link_to '学習計画を作成', new_login_plan_path, class: 'btn-top'
     =link_to '戻る', root_path, class: 'btn-top'
+  .container{"data-aos" => "fade-up"}
+    =link_to 'CSVダウンロード', export_login_plans_path, method: :post, class: 'btn-top'
