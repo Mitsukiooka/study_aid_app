@@ -1,0 +1,7 @@
+<%= @user.student.name %> 様
+
+学習計画『<%= @plan.title %>』が作成されました。
+計画開始日：<%= @plan.start_at %>
+計画終了日：<%= @plan.end_at %>
+詳細はこちら
+<%= login_plan_url(@plan.id) %>

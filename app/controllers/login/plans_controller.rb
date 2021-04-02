@@ -16,6 +16,7 @@ class Login::PlansController < Login::ApplicationController
   def create
     @plan = current_user.plans.build(plan_params)
     if @plan.save
+      NotificationMailer.notification_mail(@plan, current_user).deliver
       redirect_to login_plans_path
     else
       render 'new'

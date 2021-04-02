@@ -20,3 +20,4 @@
   .container{"data-aos" => "fade-up"}
     =link_to '生徒情報を更新する', edit_login_student_path(@student.id), class: 'btn-top'
     =link_to '生徒情報を削除' , login_student_path(@student.id), method: :delete, data: {confirm: "削除しますか？"}, class: 'btn-top'
+    =link_to '戻る', root_path, class: 'btn-top'
