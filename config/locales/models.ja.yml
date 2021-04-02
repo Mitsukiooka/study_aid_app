@@ -3,7 +3,16 @@ ja:
     models:
       plan: 学習計画
       student: 生徒情報
+      user: ユーザー
     attributes:
+      user:
+        name: 名前
+        username: メールアドレス
+        email: メールアドレス
+        image: プロフィール画像
+        password: パスワード
+        password_confirmation: パスワード(再入力)
+        remember_me: ログイン情報を保存
       plan:
         title: 計画名
         study_aid: 使用教材
