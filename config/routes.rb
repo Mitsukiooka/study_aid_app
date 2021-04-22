@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   namespace :login do
-    get 'my_page/index'
-    root to: 'my_page#index'
     resources :plans do
       post 'export' => 'plans#export', on: :collection, defaults: { format: "csv" }
     end
