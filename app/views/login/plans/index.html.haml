@@ -3,6 +3,26 @@
     .section-title.text-center
       %h2 学習計画一覧
       %p.separator 学習計画を振り返ろう！
+    .row
+      %form
+        =search_form_for [:login, @q] do |f|
+          .form-group
+            = f.label :title, "プラン名"
+            = f.search_field :title_cont, class: 'search-plan'
+          .form-group
+            = f.label :start_at, "計画開始日"
+            = f.date_select :start_at_gteq
+            %span
+              〜
+            = f.date_select :start_at_lteq
+          .form-group
+            = f.label :end_at, "計画終了日"
+            = f.date_select :end_at_gteq
+            %span
+              〜
+            = f.date_select :end_at_lteq
+          = f.submit "検索"
+      %ul.js-plans
     .row{"data-aos" => "fade-up", "data-aos-delay" => "100"}
       -@plans.each do |plan|
         .col-md-6.col-lg-4.py-3

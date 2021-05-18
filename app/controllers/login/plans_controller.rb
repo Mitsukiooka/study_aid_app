@@ -1,8 +1,9 @@
 class Login::PlansController < Login::ApplicationController
-  before_action :set_plan, except: [:index, :new, :create, :export]
+  before_action :set_plan, except: [:index, :new, :create, :export, :suggest]
 
   def index
-    @plans = current_user.plans.by_date
+    @q = current_user.plans.by_date.ransack(params[:q])
+    @plans = @q.result(distinct: true)
   end
 
   def show
@@ -47,6 +48,13 @@ class Login::PlansController < Login::ApplicationController
       format.csv do
         render_csv
       end
+    end
+  end
+
+  def suggest
+    @plans = current_user.plans.where('title LIKE(?)', "%#{params[:title]}%")
+    respond_to do |format|
+      format.json { render json: @plans }
     end
   end
 

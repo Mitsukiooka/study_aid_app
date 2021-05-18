@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   namespace :login do
     resources :plans do
+      get 'suggest' => 'plans#suggest', on: :collection, defaults: { format: "json"}
       post 'export' => 'plans#export', on: :collection, defaults: { format: "csv" }
     end
     resources :students, except: [:index]

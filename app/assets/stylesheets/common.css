@@ -19,3 +19,7 @@
   background: #71c55d;
   color: #fff;
 }
+
+.js-plans {
+  display: none;
+}
